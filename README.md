@@ -18,7 +18,7 @@ For your first weekend lab, we'll be making a tic-tac-toe game using your knowle
 
 * Display a message to indicate which player's turn is about to be played (`X` or `O`).    
 
-* If a player wins, show a message with the mark of the winner.  Separate your code that finds the winner (if any) into its own function.
+* If a player wins, show a message with the mark of the winner.  Separate your code that finds the winner (if there is a winner) into its own function.
 
 * If the board fills up before anyone wins, show a message that it was a draw.
 
