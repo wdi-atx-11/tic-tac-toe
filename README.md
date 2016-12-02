@@ -44,7 +44,7 @@ Remind yourself how tic-tac-toe works by playing a few games with a classmate.
 
 1. Make sure that jQuery and Bootstrap's CSS are linked in your `index.html`. Also link your custom CSS and JavaScript files to your `index.html`.
 
-3. Test that your CSS and JavaScript files are linked to your `index.html`. Add an alert to `app.js`, and change the color of the body in `style.css`. Then open `index.html` in the browser. You should see part of an empty tic-tac-toe game board with your background color, and you should also see your alert message pop up.
+3. Test that your CSS and JavaScript files are linked to your `index.html`. Add an alert or a `console.log` to `app.js`, and change the color of the body in `style.css`. Then open `index.html` in the browser. You should see part of an empty tic-tac-toe game board with your background color, and you should also see your alert or log message.
 
 1. There's part of a board in `index.html` already. Use Bootstrap's grid system to create the rest of the empty tic-tac-toe game board. The empty board should look like this:
 
