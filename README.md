@@ -20,7 +20,7 @@ For your first weekend lab, we'll be making a tic-tac-toe game using your knowle
 
 * If a player wins, show a message with the mark of the winner.  Separate your code that finds the winner (if there is a winner) into its own function.
 
-* If the board fills up before anyone wins, show a message that it was a draw.
+* If the board fills up before anyone wins, show a message declaring the game a draw.
 
 * Display separate colors for `X`'s and `O`'s.
 
@@ -100,5 +100,5 @@ Remind yourself how tic-tac-toe works by playing a few games with a classmate.
 ## Submission
 
 * As you make code changes, frequently commit and push to GitHub.
-* Once you've finished the assignment and pushed your work to GitHub, make a pull request from your fork to the original repo.
+* Once you've finished the assignment and pushed your work to GitHub, you will fill out the daily pulse check with a link on Monday.
 * When we come back, you'll show off your tic-tac-toe game in a "science fair" style open presentation!
