@@ -18,9 +18,9 @@ For this lab, we'll be making a tic-tac-toe game using the knowledge and skills 
 
 * Display a message to indicate which player's turn is about to be played (`X` or `O`).    
 
-* If a player wins, show a message with the mark of the winner.  Separate your code that finds the winner (if any) into its own function.
+* If a player wins, show a message with the mark of the winner.  Separate your code that finds the winner (if there is a winner) into its own function.
 
-* If the board fills up before anyone wins, show a message that it was a draw.
+* If the board fills up before anyone wins, show a message declaring the game a draw.
 
 * Display separate colors for `X`'s and `O`'s.
 
@@ -44,7 +44,7 @@ Remind yourself how tic-tac-toe works by playing a few games with a classmate.
 
 1. Make sure that jQuery and Bootstrap's CSS are linked in your `index.html`. Also link your custom CSS and JavaScript files to your `index.html`.
 
-3. Test that your CSS and JavaScript files are linked to your `index.html`. Add an alert to `app.js`, and change the color of the body in `style.css`. Then open `index.html` in the browser. You should see part of an empty tic-tac-toe game board with your background color, and you should also see your alert message pop up.
+3. Test that your CSS and JavaScript files are linked to your `index.html`. Add an alert or a `console.log` to `app.js`, and change the color of the body in `style.css`. Then open `index.html` in the browser. You should see part of an empty tic-tac-toe game board with your background color, and you should also see your alert or log message.
 
 1. There's part of a board in `index.html` already. Use Bootstrap's grid system to create the rest of the empty tic-tac-toe game board. The empty board should look like this:
 
@@ -100,6 +100,6 @@ Remind yourself how tic-tac-toe works by playing a few games with a classmate.
 ## Submission
 
 * As you make code changes, frequently commit and push to GitHub.
-* Once you've finished the assignment and pushed your work to GitHub, make a pull request from your fork to the original repo.
+* Once you've finished the assignment and pushed your work to GitHub, you will fill out the daily pulse check with a link on Monday.
 * When we come back, you'll show off your tic-tac-toe game in a "science fair" style open presentation!
 -->
