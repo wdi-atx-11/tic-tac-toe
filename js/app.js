@@ -1,5 +1,6 @@
 let gameCells = [];
 let turns = 0;
+let table = document.querySelector('.game-board');
 createGameBoard();
 
 // loop through turns
@@ -11,7 +12,6 @@ document.querySelector('button').addEventListener('click', resetBoard);
 
 // helper functions
 function createGameBoard() {
-  let table = document.querySelector('.game-board');
   let tbody = document.createElement('tbody');
   table.appendChild(tbody);
   table.onclick = playTurn;
@@ -82,6 +82,7 @@ function playTurn(e) {
 
   if(isGameWon()) {
     setTurnHeading(`${token} wins! Reset to play again!`);
+    table.onclick = null;
   } else if(turns == 9) {
     setTurnHeading('Draw! Reset to play again!');
   } else {
