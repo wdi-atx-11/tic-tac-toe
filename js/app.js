@@ -1,13 +1,10 @@
 let gameCells = createGameBoard();
 
 // loop through turns
-let gameWon = false;
 let isXTurn = true;
 
 // make reset button work
 document.querySelector('button').addEventListener('click', resetBoard);
-
-
 
 // helper functions
 function createGameBoard() {
@@ -23,18 +20,14 @@ function createGameBoard() {
       tr.appendChild(td);
       td.innerText = '';
       td.setAttribute('class', 'game-cell');
+      
+      td.addEventListener('click', playTurn);
     }
   }
   return [...table.querySelectorAll('.game-cell')];
 }
 
-function addCellListeners(cells) {
-  cells.forEach(cell => {
-    cell.addEventListener('click', playTurn);
-  });
-}
-
-function isGameWon(table) {
+function isGameWon(cell) {
 
   return false;
 }
@@ -44,6 +37,7 @@ function isGameWon(table) {
 function playTurn(e) {
   let token = isXTurn ? 'x' : 'o';
   this.innerText = token;
+  console.log(this);
 }
 
 function resetBoard() {
