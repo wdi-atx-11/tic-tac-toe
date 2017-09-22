@@ -1,5 +1,12 @@
-#board {
-  margin-top: 10px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-board {
+  border: 3px solid black;
 }
 
 .game-cell {
@@ -8,4 +15,8 @@
   width: 150px;
   text-align: center;
   font-size: 100px;
+}
+
+button {
+  margin: 10px;
 }

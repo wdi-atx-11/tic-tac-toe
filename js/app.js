@@ -14,6 +14,7 @@ function createGameBoard() {
   let table = document.querySelector('.game-board');
   let tbody = document.createElement('tbody');
   table.appendChild(tbody);
+  table.onclick = playTurn;
 
   for(let i = 0; i < 3; i++) {
     let tr = document.createElement('tr');
@@ -24,9 +25,7 @@ function createGameBoard() {
       gameCells[gameCells.length-1].push(td);
       tr.appendChild(td);
       td.innerText = '';
-      td.setAttribute('class', 'game-cell');
-
-      td.addEventListener('click', playTurn);
+      td.setAttribute('class', 'game-cell');;
     }
   }
 }
@@ -71,11 +70,15 @@ function setTurnHeading(s='') {
 
 // callbacks
 function playTurn(e) {
+  let target = e.target;
   let token = isXTurn ? 'x' : 'o';
 
+  if(target.innerText !== '') {
+    return;
+  }
+
   turns++;
-  this.innerText = token;
-  this.removeEventListener('click', playTurn);
+  target.innerText = token;
 
   if(isGameWon()) {
     setTurnHeading(`${token} wins! Reset to play again!`);
