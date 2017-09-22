@@ -1,8 +1,22 @@
-#board {
-  margin-top: 10px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.box {
+.game-board {
+  border: 3px solid black;
+}
+
+.game-cell {
   border: 1px solid black;
   height: 150px;
+  width: 150px;
+  text-align: center;
+  font-size: 100px;
+}
+
+button {
+  margin: 10px;
 }
