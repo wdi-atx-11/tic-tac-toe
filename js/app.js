@@ -1,8 +1,10 @@
 let gameCells = [];
+let turns = 0;
 createGameBoard();
 
 // loop through turns
 let isXTurn = true;
+setTurnHeading();
 
 // make reset button work
 document.querySelector('button').addEventListener('click', resetBoard);
@@ -30,6 +32,7 @@ function createGameBoard() {
 }
 
 function isGameWon() {
+  let win = false;
   [
     [[0,0], [1,0], [2,0]],
     [[0,0], [0,1], [1,2]],
@@ -41,10 +44,11 @@ function isGameWon() {
     [[0,2], [1,2], [2,2]]
   ].forEach(con => {
     if(checkWinCondition(con)) {
-      return true;
+      win = true;
+      return;
     }
   });
-  return false;
+  return win;
 }
 
 function checkWinCondition(condition) {
@@ -59,22 +63,36 @@ function checkWinCondition(condition) {
   return isWinning;
 }
 
+function setTurnHeading(s='') {
+  setTimeout(() => {
+    document.querySelector('.whose-turn').innerText = s || `Turn: ${isXTurn ? 'x' : 'o'}`;
+  }, 200);
+}
+
 // callbacks
 function playTurn(e) {
   let token = isXTurn ? 'x' : 'o';
 
+  turns++;
   this.innerText = token;
   this.removeEventListener('click', playTurn);
-  if(isGameWon()) {
-    alert(`${token} wins!`);
-  }
 
-  isXTurn = !isXTurn;
+  if(isGameWon()) {
+    setTurnHeading(`${token} wins! Reset to play again!`);
+  } else if(turns == 9) {
+    setTurnHeading('Draw! Reset to play again!');
+  } else {
+    isXTurn = !isXTurn;
+    setTurnHeading();
+  }
 }
 
 function resetBoard() {
   let table = document.querySelector('.game-board');
   table.removeChild(table.children[0]);
   gameCells = [];
+  isXTurn = true;
+  turns = 0;
+  setTurnHeading();
   createGameBoard();
 }
