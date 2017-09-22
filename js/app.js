@@ -20,7 +20,7 @@ function createGameBoard() {
       tr.appendChild(td);
       td.innerText = '';
       td.setAttribute('class', 'game-cell');
-      
+
       td.addEventListener('click', playTurn);
     }
   }
@@ -37,7 +37,7 @@ function isGameWon(cell) {
 function playTurn(e) {
   let token = isXTurn ? 'x' : 'o';
   this.innerText = token;
-  console.log(this);
+  isXTurn = !isXTurn;
 }
 
 function resetBoard() {
