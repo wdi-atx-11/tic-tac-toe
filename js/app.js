@@ -31,14 +31,14 @@ function createGameBoard() {
 
 function isGameWon() {
   [
-    [0,0, 1,0, 2,0]
-    [0,0, 0,1, 1,2],
-    [0,0, 1,1, 2,2],
-    [1,0, 1,1, 1,2],
-    [2,0, 2,1, 2,2],
-    [2,0, 1,1, 0,2],
-    [0,1, 1,1, 2,1],
-    [0,2, 1,2, 2,2]
+    [[0,0], [1,0], [2,0]],
+    [[0,0], [0,1], [1,2]],
+    [[0,0], [1,1], [2,2]],
+    [[1,0], [1,1], [1,2]],
+    [[2,0], [2,1], [2,2]],
+    [[2,0], [1,1], [0,2]],
+    [[0,1], [1,1], [2,1]],
+    [[0,2], [1,2], [2,2]]
   ].forEach(con => {
     if(checkWinCondition(con)) {
       return true;
@@ -47,14 +47,16 @@ function isGameWon() {
   return false;
 }
 
-function checkWinCondition(ar) {
-  for(let i = 0; i < ar.length; i+=2) {
-    let coord = ar.slice(i,i+1);
-    if(gameCells[coord[0]*coord[1]] !== (isXTurn ? 'x' : 'o')) {
-      return false;
+function checkWinCondition(condition) {
+  let isWinning = true;
+  condition.forEach(coord => {
+    if(gameCells[coord[0]][coord[1]].innerText !== (isXTurn ? 'x' : 'o')) {
+      isWinning = false;
+      return;
     }
-  }
-  return true;
+  });
+
+  return isWinning;
 }
 
 // callbacks
@@ -73,5 +75,6 @@ function playTurn(e) {
 function resetBoard() {
   let table = document.querySelector('.game-board');
   table.removeChild(table.children[0]);
-  gameCells = createGameBoard();
+  gameCells = [];
+  createGameBoard();
 }
